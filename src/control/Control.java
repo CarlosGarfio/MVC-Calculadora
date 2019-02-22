@@ -10,6 +10,10 @@ public class Control {
     private Modelo modelo;
     private Vista vista;
 
+    private double numero = 0d;
+    private char operator = 0;
+    private String append="";
+
     public Control(Modelo modelo, Vista vista) {
         this.modelo = modelo;
         this.vista = vista;
@@ -36,58 +40,65 @@ public class Control {
         vista.jTextField1.setText(Double.toString(value));
     }
 
+    public void appendTextValue(char value) {
+        append+=value;
+        vista.jTextField1.setText(append);
+    }
+    
     class Actions implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
                 if (e.getSource() == vista.ADD) {
-                    modelo.set(vista.ADD, vista.jTextField1);
-                    setTextValue(modelo.getN1());
+                    operator = '+';
+                    append="";
+                    numero=Double.parseDouble(vista.jTextField1.getText());
                 } else if (e.getSource() == vista.SUB) {
-                    modelo.set(vista.SUB, vista.jTextField1);
-                    setTextValue(modelo.getN1());
+                    operator = '-';
+                    append="";
+                    numero=Double.parseDouble(vista.jTextField1.getText());
                 } else if (e.getSource() == vista.DIVIDE) {
-                    modelo.set(vista.DIVIDE, vista.jTextField1);
-                    setTextValue(modelo.getN1());
+                    operator = '/';
+                    append="";
+                    numero=Double.parseDouble(vista.jTextField1.getText());
                 } else if (e.getSource() == vista.MULTIPLY) {
-                    modelo.set(vista.MULTIPLY, vista.jTextField1);
-                    setTextValue(modelo.getN1());
+                    operator = '*';
+                    append="";
+                    numero=Double.parseDouble(vista.jTextField1.getText());
                 } else if (e.getSource() == vista.EQUALS) {
-                    modelo.set(vista.EQUALS, vista.jTextField1);
-                    setTextValue(modelo.getN1());
+                    setTextValue(modelo.Calcular(numero, Double.parseDouble(vista.jTextField1.getText()), operator));
+                    append="";
                 } else if (e.getSource() == vista.C) {
-                    modelo.set(vista.C, vista.jTextField1);
-                    setTextValue(modelo.getN1());
+                    operator = 0;
+                    numero = 0d;
+                    append="";
+                    setTextValue(0.0d);
+                }  else if (e.getSource() == vista.BP) {
+                    appendTextValue('.');
+                }else if (e.getSource() == vista.B0) {
+                    appendTextValue('0');
                 } else if (e.getSource() == vista.B1) {
-                    modelo.setN2(1);
-                    setTextValue(1);
+                    appendTextValue('1');
                 } else if (e.getSource() == vista.B2) {
-                    modelo.setN2(2);
-                    setTextValue(2);
+                    appendTextValue('2');
                 } else if (e.getSource() == vista.B3) {
-                    modelo.setN2(3);
-                    setTextValue(3);
+                    appendTextValue('3');
                 } else if (e.getSource() == vista.B4) {
-                    modelo.setN2(4);
-                    setTextValue(4);
+                    appendTextValue('4');
                 } else if (e.getSource() == vista.B5) {
-                    modelo.setN2(5);
-                    setTextValue(5);
+                    appendTextValue('5');
                 } else if (e.getSource() == vista.B6) {
-                    modelo.setN2(6);
-                    setTextValue(6);
+                    appendTextValue('6');
                 } else if (e.getSource() == vista.B7) {
-                    modelo.setN2(7);
-                    setTextValue(7);
+                    appendTextValue('7');
                 } else if (e.getSource() == vista.B8) {
-                    modelo.setN2(8);
-                    setTextValue(8);
+                    appendTextValue('8');
                 } else if (e.getSource() == vista.B9) {
-                    modelo.setN2(9);
-                    setTextValue(9);
+                    appendTextValue('9');
                 }
             } catch (Exception ex) {
+                System.out.println(ex.getMessage());
             }
         }
     }

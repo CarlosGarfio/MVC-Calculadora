@@ -10,12 +10,10 @@ public class Vista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         C = new javax.swing.JButton();
         B7 = new javax.swing.JButton();
         B8 = new javax.swing.JButton();
@@ -30,9 +28,20 @@ public class Vista extends javax.swing.JFrame {
         B3 = new javax.swing.JButton();
         SUB = new javax.swing.JButton();
         B0 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
+        BP = new javax.swing.JButton();
         EQUALS = new javax.swing.JButton();
         ADD = new javax.swing.JButton();
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -62,15 +71,6 @@ public class Vista extends javax.swing.JFrame {
 
         jPanel2.setLayout(new java.awt.GridLayout(5, 4));
 
-        jButton1.setText("(");
-        jPanel2.add(jButton1);
-
-        jButton2.setText(")");
-        jPanel2.add(jButton2);
-
-        jButton3.setText("%");
-        jPanel2.add(jButton3);
-
         C.setText("C");
         jPanel2.add(C);
 
@@ -95,7 +95,7 @@ public class Vista extends javax.swing.JFrame {
         B6.setText("6");
         jPanel2.add(B6);
 
-        MULTIPLY.setText("×");
+        MULTIPLY.setText("*");
         jPanel2.add(MULTIPLY);
 
         B1.setText("1");
@@ -113,8 +113,8 @@ public class Vista extends javax.swing.JFrame {
         B0.setText("0");
         jPanel2.add(B0);
 
-        jButton18.setText(".");
-        jPanel2.add(jButton18);
+        BP.setText(".");
+        jPanel2.add(BP);
 
         EQUALS.setText("=");
         jPanel2.add(EQUALS);
@@ -147,17 +147,15 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JButton B7;
     public javax.swing.JButton B8;
     public javax.swing.JButton B9;
+    public javax.swing.JButton BP;
     public javax.swing.JButton C;
     public javax.swing.JButton DIVIDE;
     public javax.swing.JButton EQUALS;
     public javax.swing.JButton MULTIPLY;
     public javax.swing.JButton SUB;
-    public javax.swing.JButton jButton1;
-    public javax.swing.JButton jButton18;
-    public javax.swing.JButton jButton2;
-    public javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     public javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
